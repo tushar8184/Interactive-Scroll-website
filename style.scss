@@ -1,0 +1,449 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lexend", sans-serif;
+}
+
+body {
+  background-color: rgb(38, 50, 56);
+  overflow-x: hidden;
+  position: relative;
+}
+main {
+  position: absolute;
+}
+#logo {
+  color: white;
+  font-weight: 500;
+}
+
+.nav-header {
+  position: relative;
+  min-height: 10vh;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  color: white;
+  padding: 2rem 0rem;
+  z-index: 9999;
+
+  .burger {
+    cursor: pointer;
+  }
+}
+
+.line1,
+.line2 {
+  background: white;
+  width: 3rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  pointer-events: none;
+}
+
+.slide {
+  background-color: rgb(38, 50, 56);
+  min-height: 100vh;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+
+  .hero-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-basis: 25rem;
+    padding-left: 5rem;
+    position: relative;
+
+    h2 {
+      font-size: 5rem;
+      font-weight: 500;
+    }
+
+    p {
+      transition: all 1s ease;
+      font-weight: 300;
+      padding: 3rem 0rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  .reveal-img,
+  .reveal-text {
+    background-color: rgb(38, 50, 56);
+    position: absolute;
+    width: 100%;
+    height: 150%;
+    left: 0;
+    top: -15%;
+  }
+
+  .hero-img {
+    height: fit-content;
+    position: relative;
+    flex: 1;
+    flex-basis: 25rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .mountain-span {
+    color: rgb(255, 139, 93);
+    transition: all 1s ease;
+  }
+  .hike-span {
+    // background-color: rgb(205, 220, 57);
+    color: rgb(205, 220, 57);
+    transition: all 1s ease;
+  }
+  .fashion-span {
+    // color: #e91e63;
+    color: rgb(236, 64, 122);
+    transition: all 1s ease;
+  }
+
+  .explore {
+    padding: 1rem 2rem;
+    align-self: flex-start;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: all 1s ease;
+  }
+}
+
+// ? Navbar Section
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 1;
+  z-index: 1;
+  color: rgb(38, 50, 56);
+  clip-path: circle(50px at 100% -10%);
+
+  .nav-links {
+    font-size: 3rem;
+    flex-basis: 30rem;
+
+    h3 {
+      padding: 3rem 0rem;
+      font-weight: 300;
+    }
+  }
+
+  .contact {
+    flex-basis: 30rem;
+
+    h2 {
+      font-weight: 500;
+      font-size: 3rem;
+      padding: 2rem 0rem;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+// ? Cursor Section
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+  transition-property: background, transform;
+  transform-origin: 75% 75%;
+
+  .cursor-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: rgb(236, 64, 122);
+    font-size: 0.5rem;
+    transform: translate(-50%, -50%);
+  }
+}
+.cursor.mouse-active {
+  background: rgb(117, 117, 117);
+  transform: scale(3);
+}
+.cursor.mouse-remain {
+  background: transparent;
+}
+.cursor.explore-active {
+  background-color: rgb(38, 50, 56);
+  transform: scale(3);
+  border: 1px solid white;
+}
+
+.scrollmagic-pin-spacer {
+  position: static !important;
+}
+
+.title {
+  position: relative;
+  overflow: hidden;
+
+  .title-swipe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    mix-blend-mode: darken;
+    transform: translateY(100%);
+  }
+  .t-swipe1 {
+    background: rgb(255, 139, 93);
+  }
+  .t-swipe2 {
+    background: rgb(205, 220, 57);
+  }
+  .t-swipe3 {
+    background: rgb(236, 64, 122);
+  }
+}
+
+body.hide {
+  overflow: hidden;
+}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+ Page 2 Style
+
+.fashion1,
+.fashion2,
+.fashion3 {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 5rem auto 0;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.detail-slide {
+  .fashion-img {
+    height: 80vh;
+    flex-basis: 30rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .fashion-text {
+    position: relative;
+    flex: 1;
+    flex-basis: 25rem;
+
+    p {
+      font-size: 2rem;
+      padding: 0rem 2rem 0 0;
+      color: white;
+    }
+  }
+  .fashion-number span {
+    font-size: 12rem;
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    color: white;
+    opacity: 0.3;
+  }
+}
+
+.fashion1 {
+  h1 {
+    font-size: 6rem;
+    padding: 4rem 0;
+    color: rgb(255, 139, 93);
+  }
+}
+.fashion2 {
+  h1 {
+    color: rgb(205, 220, 57);
+    font-size: 6rem;
+    padding: 4rem 0;
+  }
+}
+.fashion3 {
+  h1 {
+    color: rgb(236, 64, 122);
+    font-size: 6rem;
+    padding: 4rem 0;
+  }
+}
+
+//++ Swipe
+.swipe {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+}
+
+.swipe1 {
+  background-color: rgb(255, 139, 93);
+  z-index: 5;
+}
+.swipe2 {
+  background-color: rgb(236, 64, 122);
+  z-index: 4;
+}
+.swipe3 {
+  background-color: rgb(205, 220, 57);
+  z-index: 3;
+}
+
+//+ Responsive
+@media screen and (max-width: 1500px) {
+  .hero-img {
+    height: 50vh;
+  }
+
+  .fashion-text {
+    h1 {
+      font-size: 3.5rem;
+      padding: 1rem 0rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .fashion-img {
+    img {
+      height: 50vh;
+      object-position: top;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    width: 100%;
+    margin: 0;
+  }
+
+  .slide {
+    padding: 0 2rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 50vh;
+
+    .hero-desc {
+      padding: 0;
+      h2 {
+        font-size: 3rem;
+        padding: 1rem 0rem;
+      }
+      p {
+        padding: 0rem 1rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-align: center;
+      }
+      .explore {
+        width: 60%;
+        margin: 2rem auto;
+      }
+    }
+
+    .hero-img {
+      padding-top: 4rem;
+    }
+  }
+
+  //+ Fashion Page Media Query
+
+  .detail-slide {
+    width: 100%;
+    text-align: center;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+
+    .fashion-text {
+      order: 2;
+      p {
+        font-size: 1.5rem;
+        padding: 0;
+      }
+    }
+    .fashion-number {
+      font-size: 8rem;
+      span {
+        opacity: 0.2;
+        color: rgb(244, 67, 54);
+        top: 30%;
+        left: 40%;
+      }
+    }
+    .fashion-img {
+      img {
+        height: 65vh;
+      }
+    }
+  }
+
+  .nav-bar {
+    display: block;
+
+    .nav-links {
+      margin-top: 3rem;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .contact {
+      h2 {
+        font-size: 3rem;
+        text-align: center;
+      }
+      p {
+        font-size: 1.2rem;
+        padding: 2rem;
+        text-align: center;
+      }
+    }
+  }
+}
